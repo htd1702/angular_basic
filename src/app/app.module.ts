@@ -4,12 +4,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { CatComponent } from './cat/cat.component';
+import { DogComponent } from './dog/dog.component';
+import { ChickenComponent } from './chicken/chicken.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    CatComponent,
+    DogComponent,
+    ChickenComponent
   ],
   imports: [
     BrowserModule
