@@ -1,1 +1,31 @@
-<p>login works!</p>
+<div class="app-login">
+  <div class="login-page">
+    <h3 class="login-page__title">Welcome to TODO Application</h3>
+
+    <!-- {{ user | json }} -->
+    {{ loginForm.value | json }}
+
+    <form #loginForm="ngForm" class="login-page__form">
+      <input
+        class="login-page__input"
+        type="email"
+        placeholder="Email"
+        name="email"
+        required
+        [(ngModel)]="user.email"
+      />
+      <input
+        class="login-page__input"
+        type="password"
+        placeholder="password"
+        name="password"
+        required
+        [(ngModel)]="user.password"
+      />
+      <div class="login-page__actions">
+        <a class="login-page__link" href="">Register</a>
+        <button class="login-page__button" type="button" [disabled]="loginForm.invalid" (click)="onSignIn(loginForm)">SIGN IN</button>
+      </div>
+    </form>
+  </div>
+</div>

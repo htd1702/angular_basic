@@ -1,0 +1,57 @@
+<div class="app-registration">
+  <div class="login-page">
+    <h3 class="login-page__title">Registration Todo Application</h3>
+
+    <!-- {{ user | json }} -->
+    {{ registrationForm.value | json }}
+
+    <form #registrationForm="ngForm" class="login-page__form">
+      <input
+        class="login-page__input"
+        type="input"
+        placeholder="name"
+        name="name"
+        required
+        minlength="3"
+        [(ngModel)]="user.name"
+      />
+      <input
+        class="login-page__input"
+        type="email"
+        placeholder="Email"
+        name="email"
+        required
+        [pattern]="emailRegex"
+        [(ngModel)]="user.email"
+      />
+      <input
+        class="login-page__input"
+        type="password"
+        placeholder="password"
+        name="password"
+        required
+        minlength="6"
+        maxlength="16"
+        [(ngModel)]="user.password"
+      />
+      <input
+        class="login-page__input"
+        type="age"
+        placeholder="age"
+        name="age"
+        [(ngModel)]="user.age"
+      />
+
+      <div class="login-page__actions">
+        <button
+          class="login-page__button"
+          type="button"
+          [disabled]="registrationForm.invalid"
+          (click)="onSignIn(registrationForm)"
+        >
+          Register
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
